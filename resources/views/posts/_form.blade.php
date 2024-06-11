@@ -7,6 +7,13 @@
 value="{{ old('title',$post->title) }}" >
 
 
+<label class="uppercase text-gray-100 text-xs">Slug</label>
+<span class="text-xs text-red-600" >@error('slug') {{ $message }} @enderror</span>
+
+<input type="text" name="slug" class="rounded border-gray-900 w-full mb-4 text-black"
+value="{{ old('slug',$post->slug) }}" >
+
+
 <label class="uppercase text-gray-100 text-xs">Contenido</label>
 <span class="text-xs text-red-600" >@error('body') {{ $message }} @enderror</span>
 
