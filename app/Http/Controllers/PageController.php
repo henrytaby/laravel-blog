@@ -10,7 +10,9 @@ class PageController extends Controller
     public function home(Request $request){
         $search = $request->search;
         //dd($search);
-        $posts = Post::where('title','LIKE',"%{$search}%")->latest()->paginate();
+        $posts = Post::where('title','LIKE',"%{$search}%")
+        ->with('user')
+        ->latest()->paginate();
         //$posts = Post::latest()->paginate();
         return view('home', ['posts'=> $posts]);
     }
